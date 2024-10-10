@@ -27,3 +27,17 @@ Removed the .http file due to avoid a potential leak if sensitive information is
 
 ## 0.1.2
 Corrected additional changes from CodeQL, refresh tokens aren't provided as plaintext direct in the json response. Instead refresh token are now provided in a cookie.  
+
+## 0.1.3
+### Changed
+- Created a Dockerfile to utilize a multi-stage build for the TMS_API application.
+- Introduced a build stage using the .NET SDK image (mcr.microsoft.com/dotnet/sdk:8.0) for restoring dependencies and publishing the application.
+- Added a runtime stage using the .NET ASP.NET image (mcr.microsoft.com/dotnet/aspnet:8.0) to run the application.
+- Installed the New Relic agent during the runtime stage to monitor application performance.
+- Configured environment variables for New Relic profiling and application binding.
+
+### Notes
+- The multi-stage build optimizes image size by separating build and runtime dependencies.
+- Installing the New Relic agent allows for better monitoring and performance tracking of the application.
+- This update enables application performance monitoring.
+- The DockerFile won't be used in a production environment due to secrets being passed in ARG.

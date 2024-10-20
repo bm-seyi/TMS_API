@@ -52,7 +52,14 @@ Corrected additional changes from CodeQL, refresh tokens aren't provided as plai
 - Modified the loading mechanism for the .env file, ensuring it is only loaded when the API__KEY environment variable is not found. This change aims to streamline configuration management, with plans for a more dynamic and flexible solution in a future update.
 
 ### Removed
-The New Relic agent was removed from the Dockerfile.
+- The New Relic agent was removed from the Dockerfile.
 
 ### Notes
-The new relic agent was removed to facilitate easier debugging and manual performance improvements, rather than depending on third-party software.
+- The new relic agent was removed to facilitate easier debugging and manual performance improvements, rather than depending on third-party software.
+
+## 0.1.5
+### Added
+-  Added Endpoint Performance Metrics section to the [README](README.MD)
+
+### Notes
+- Endpoint Performance Metric was added to track and monitor performance for each endpoints. Additional changes are expected to added in the future. 
